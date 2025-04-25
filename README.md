@@ -161,3 +161,4 @@ Utiliza `brew install` para agregar utilidades que mejoran tu productividad.
 
 ¡Con esto ya cuentas con un entorno sólido para desarrollar en Windows con WSL2! Si tienes dudas, revisa la documentación oficial de cada herramienta o consulta foros especializados.
 
+Recuerda configurar tus lllaves ssh
