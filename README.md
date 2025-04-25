@@ -60,7 +60,7 @@ Antes de comenzar, asegúrate de contar con lo siguiente:
 
 Las Nerd Fonts incluyen iconos para mejorar la apariencia de tu terminal.
 
-1. Descarga [Mononoki Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases) o similar.
+1. Descarga [Mononoki Nerd Font](https://www.nerdfonts.com/font-downloads) o similar.
 2. Instálala en Windows (clic derecho ▶ Installer).
 3. En **Windows Terminal**, abre las **Configuraciones**, busca el perfil Ubuntu y selecciona la fuente `Mononoki NF` o la que hayas instalado.
 
@@ -108,7 +108,7 @@ Zsh es un shell potente y personalizable; Oh My Zsh facilita su gestión.
 
    git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git $ZSH_CUSTOM/plugins/zsh-autocomplete
    ```
-6. Edita `~/.zshrc` y añade en `plugins=(...)`:
+6. Edita `nano ~/.zshrc` y añade en `plugins=(...)`:
    ```bash
    plugins=(git zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting zsh-autocomplete)
    ```
@@ -145,7 +145,7 @@ Homebrew facilita la instalación de herramientas adicionales.
    - **fnm** (Node.js Manager) + Node LTS y Bun:
      ```bash
      brew install fnm
-     echo 'eval "$(fnm env --multi-zsh)"' >> ~/.zshrc
+     echo 'eval "$(fnm env --use-on-cd --shell zsh)"' >> ~/.zshrc
      fnm install --lts
      fnm install bun
      # Alternativa ejecuta: brew install oven-sh/bun/bun
@@ -158,8 +158,9 @@ Homebrew facilita la instalación de herramientas adicionales.
    - **fzf** (fuzzy finder de archivos):
      ```bash
      brew install fzf
+     echo 'eval "$(fzf --zsh)"' >> ~/.zshrc
      ```
-4. Personalización final (añade al final de `~/.zshrc`):
+4. Personalización final (añade o verifica al final de `~/.zshrc`) que los paths se hayan agregado correctamente:
    ```bash
    # Homebrew
    BREW_BIN="/home/linuxbrew/.linuxbrew/bin"
@@ -307,9 +308,9 @@ Recuerda configurar tus lllaves ssh para trabajar con git y github
 
 6. **Key:** pega el contenido de `~/.ssh/personal.pub`
 
-7. verifica que no haya saltos de linea, borra espacioados finales e iniciales.
+7. Verifica que no haya saltos de línea y elimina los espacios iniciales y finales.
 
-8. Por ultimo da click en crear o agregar Ssh Key
+8. Por ultimo da click en crear o agregar SSH Key
 
    ![alt text](image.png)
 
@@ -327,7 +328,7 @@ Recuerda configurar tus lllaves ssh para trabajar con git y github
    ![alt text](image-1.png)
 
 4. Ingresa un tituo o nombre de tu llave SSH    
-   - **Title:** `PC-Personal`
+   - **Title:** `Signer-Personal`
 
 5. **Key Type** -> `Signing Key`
 
@@ -335,14 +336,33 @@ Recuerda configurar tus lllaves ssh para trabajar con git y github
 
 6. **Key:** pega el contenido de `~/.ssh/personal.pub`
 
-7. verifica que no haya saltos de linea, borra espacioados finales e iniciales.
+7. Verifica que no haya saltos de línea y elimina los espacios iniciales y finales.
 
-9. Por ultimo da click en crear o agregar Ssh Key
+9. Por ultimo da click en crear o agregar SSH Key
 
    ![alt text](image-4.png)
 
 ---
 
-Nota: Debes realizar los dos procesos de agregar la llave publica a Github para que no tengas problemas e obligatorio hacerlo
+Nota: Es imprescindible completar ambos procesos para añadir tu llave pública en GitHub y así evitar cualquier inconveniente.
+
+## Acciones post Instalación:
+
+### 1️⃣ Limpiar caché de APT (para distribuciones basadas en Debian/Ubuntu/Wsl)
+
+```bash
+sudo apt autoremove -y     # Elimina paquetes que ya no son necesarios
+sudo apt autoclean -y      # Elimina archivos de paquetes obsoletos
+sudo apt clean -y          # Borra la caché de paquetes descargados
+```
+
+### 2️⃣ Limpiar caché de Homebrew (macOS/Ubuntu/Wsl)
+
+```bash
+brew cleanup -n     # Muestra cuánto espacio se puede liberar
+brew cleanup        # Elimina versiones antiguas y archivos innecesarios
+brew cleanup -s     # Limpieza profunda, incluyendo caché descargada
+brew autoremove     # Elimina dependencias que ya no se usan
+```
 
 ¡Listo! Con esta guía tienes un entorno completo, personalizable y productivo en Windows con WSL2. ¡A programar! 🎉
