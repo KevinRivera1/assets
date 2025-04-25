@@ -79,6 +79,30 @@ Zsh es un shell potente y personalizable; Oh My Zsh facilita su gestión.
    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
    ```
 5. Configura tu tema y plugins editando `~/.zshrc` (ver sección de personalización al final).
+   
+   ```bash
+   # Instala el plugin zsh-autosuggestions:
+
+   git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
+   ```
+
+   ```bash
+   # Instala el plugin zsh-syntax-highlighting:
+
+   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+   ```
+
+   ```bash
+   # Instala el plugin fast-syntax-highlighting:
+
+   git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
+   ```
+
+   ```bash
+   # Instala el plugin zsh-autocomplete:
+
+   git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git $ZSH_CUSTOM/plugins/zsh-autocomplete
+   ```
 
 ---
 
@@ -119,6 +143,9 @@ Utiliza `brew install` para agregar utilidades que mejoran tu productividad.
   echo 'eval "$(fnm env --multi-zsh)"' >> ~/.zshrc
   fnm install --lts        # Node.js LTS
   fnm install bun          # Bun
+
+  #OJO: Tambien puedes instalar bun con brew
+  brew install oven-sh/bun/bun
   ```
 
 - **zfz** (fuzzy finder de archivos):
@@ -137,9 +164,27 @@ Utiliza `brew install` para agregar utilidades que mejoran tu productividad.
 ### 7. Personalización final y verificación
 
 1. Abre `~/.zshrc` y revisa:
-   - Tema (`ZSH_THEME`) de Oh My Zsh
-   - Plugins (`plugins=(git z zoxide ...)`)
-   - Inicialización de starship y fnm
+   - Dentro de tu archivo de configuración `~/.zshrc` y ubica esta sección: `plugins=(git)`. Agrega lo siguiente:
+      ```bash
+      plugins=(git zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting zsh-autocomplete)
+      ```
+   - Inicialización de starship - fnm - fzf - zoxide
+   
+      NOTA: Agregar estos paths al final en el archivo `~/.zshrc`:
+      ```bash
+      # Homebrew path
+       BREW_BIN="/home/linuxbrew/.linuxbrew/bin"
+       eval "$($BREW_BIN/brew shellenv)"
+      # fnm nodejs manager
+       eval "$(fnm env --use-on-cd --shell zsh)"
+      # starship path
+       eval "$(starship init zsh)"
+      # fzf path
+       eval "$(fzf --zsh)"
+      # zoxide path
+       eval "$(zoxide init zsh)"
+      ```
+
 2. Recarga la configuración:
    ```bash
    source ~/.zshrc
