@@ -206,4 +206,126 @@ Utiliza `brew install` para agregar utilidades que mejoran tu productividad.
 
 ¡Con esto ya cuentas con un entorno sólido para desarrollar en Windows con WSL2! Si tienes dudas, revisa la documentación oficial de cada herramienta o consulta foros especializados.
 
-Recuerda configurar tus lllaves ssh
+## Configuracion de `git` y llaves `ssh`
+
+Recuerda configurar tus lllaves ssh para trabajar con git y github
+
+1. Generar llave ssh
+
+   ```bash
+   ssh-keygen -t ed25519 -C "your_email@example.com" -f ~/.ssh/nombre_llave #Ejemplo: -f ~/.ssh/personal
+   ```
+- Al ejecutar el anterior comando se debio generar dos llaves `ssh` una privada y otra pública:
+
+      * llave privada sin extensión `personal`
+      * llave publica con extension `personal.pub`
+2. Inicializa el ssh-agent:
+   ```bash
+   eval "$(ssh-agent -s)"
+   ```
+3. Agrega tu llave SSH privada al ssh-agent:
+   ```bash
+   ssh-add ~/.ssh/nombre_clave #Ejemplo:ssh-add ~/.ssh/personal
+   ```
+
+4. Ahora abre con cualquier editor como `nano` - `vim` o `vscode`:
+   ```bash
+   nano ~/.ssh/config
+   code  ~/.ssh/config
+   vim  ~/.ssh/config
+   ```
+5. Agrega esta configuración:
+
+   ```bash
+   # Configuración para git personal (Personal)
+   Host gh-personaldev
+      HostName github.com
+      User git
+      IdentityFile ~/.ssh/personal #ruta llave privada
+   ```
+## Ahora toca configurar git
+
+1. Configurar usuario para git:
+
+* Ejecuta todos los comandos con tu informacion correcta:
+
+   ```bash
+   $ git config --global user.email "your_email@example.com"
+   $ git config --global user.name "tu username de github exacto"
+   $ git config --global user.signingkey ~/.ssh/personal.pub
+   $ git config --global gpg.format ssh
+   $ git config --global commit.gpgsign true
+   $ git config --global tag.gpgsign true
+   $ git config --global gpg.ssh.allowedsignersfile ~/.config/git/allowed_signers
+   ```
+
+2. Crear el archivo allowed_signers
+
+   ```bash
+   # Crea el archivo git en esa ruta
+   mkdir -p ~/.config/git
+   ```
+   ```bash
+   # Abre con nano o vim o vscode lo siguiente
+   nano ~/.config/git/allowed_signers
+   vim ~/.config/git/allowed_signers
+   code ~/.config/git/allowed_signers
+   ```
+
+   Ahora te recomiendo abrir otra terminal y vas a ver tu llave publica esto es obligatorio:
+
+   copia la llave ssh publica y esa llave lo pegas en la consola que esta abierto el directorio `allowed_signers`:
+
+    ```bash
+    # consola dos
+   cat ~/.ssh/personal.pub
+   ```
+
+   Una vez abierto agrega tu llave publica con la siguiente con la estructura exacta que te proporciono:
+
+   Nota: debe ser en ese orden verifica modificalo correctamente correctamente
+
+   ```bash
+   # primero va tu email
+   # segundo la codificacion ssh-ed25519
+   # tercero la cadena de caracteres
+
+   # Nota: No debe tener espacio al inicio ni al final
+
+   your_email@example.com ssh-ed25519 xasxasASasdazA....
+   ```
+
+## Agregar tu llave publica a Github para autenticar el usuario ssh
+1. Ingresa a tu cuenta de Github
+2. Abre la seccion de `configuracion` o `settings`
+3. Ubica la opcion `SSH y Gpg keys`
+   ![alt text](image-2.png)
+4. Da click en `New SSH Key`
+   ![alt text](image-1.png)
+5. Ingresa un tituo o nombre de tu llave SSH ejemplo:PC-Personal
+6. Key Type -> `Authentication Key`
+   ![alt text](image-5.png)
+7. Key: Agrega la llave publica que debes copiar exactamente del directorio ~/.ssh/personal.pub
+8. pega la llave publica el el apartado key y elimina espacion finales o espacion al inicio
+9. por ultimo da click en crear o agregar Ssh Key
+
+   ![alt text](image.png)
+
+## Agregar tu llave publica a Github para firmar commits con ssh
+
+1. Ingresa a tu cuenta de Github
+2. Abre la seccion de `configuracion` o `settings`
+3. Ubica la opcion `SSH y Gpg keys`
+   ![alt text](image-2.png)
+4. Da click en `New SSH Key`
+   ![alt text](image-1.png)
+5. Ingresa un tituo o nombre de tu llave SSH ejemplo:Signing-Personal
+6. Key Type -> `Signing Key`
+   ![alt text](image-3.png)
+7. Key: Agrega la llave publica que debes copiar exactamente del directorio ~/.ssh/personal.pub
+8. pega la llave publica el el apartado key y elimina espacion finales o espacion al inicio
+9. por ultimo da click en crear o agregar Ssh Key
+
+   ![alt text](image-4.png)
+
+Nota: Debes realizar los dos procesos de agregar la llave publica a Github para que no tengas problemas e obligatorio hacerlo
