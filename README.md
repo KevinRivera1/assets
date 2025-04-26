@@ -51,7 +51,7 @@ bash ./setup_wsl_dev_env.sh
    ```powershell
    wsl --list --online
    ```
-   
+
 2. Instalar Ubuntu:
 
    ```powershell
@@ -101,7 +101,12 @@ Zsh es un shell potente y personalizable; Oh My Zsh facilita su gestión.
    ```bash
    chsh -s $(which zsh)
    ```
-3. Cierra y abre de nuevo la terminal.
+3. Cierra y abre de nuevo la terminal
+   
+   - Seleccionar la opción `(2)`
+   
+      ![alt text](assets/img/image-6.png)
+
 4. Instala **Oh My Zsh**:
    ```bash
    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
