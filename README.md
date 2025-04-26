@@ -14,6 +14,20 @@ Antes de comenzar, asegúrate de contar con lo siguiente:
 - **Permisos de administrador** en PowerShell o CMD
 
 ---
+# Instalación (recomendada automáticamente)
+
+¡La forma más fácil! Prueba el proceso automatizado y deja que el script haga todo el trabajo por ti.
+El script de instalación automática es la forma más rápida y sencilla de configurar tu entorno de desarrollo. Este script se encarga de todo el trabajo pesado, pero recuerda que debes instalar la fuente mencionada a continuación antes de ejecutarlo. El script está diseñado para Linux y sistemas WSL.
+
+```powershell
+curl -O https://raw.githubusercontent.com/KevinRivera1/assets/refs/heads/main/setup_wsl_dev_env.sh
+
+sudo chmod +x setup_wsl_dev_env.sh
+bash ./setup_wsl_dev_env.sh
+```
+
+---
+# Instalación Manual
 
 ## 1️⃣ Instalar y configurar WSL2
 
