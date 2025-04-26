@@ -293,18 +293,18 @@ Recuerda configurar tus lllaves ssh para trabajar con git y github
 1. Ingresa a tu cuenta de Github
 2. En GitHub, ve a **Settings → SSH y GPG keys**.
 
-   ![alt text](image-2.png)
+   ![alt text](assets/img/image-2.png)
 
 3. Da click en `New SSH Key`
 
-   ![alt text](image-1.png)
+   ![alt text](assets/img/image-1.png)
 
 4. Ingresa un tituo o nombre de tu llave SSH    
    - **Title:** `PC-Personal`
 
 5. **Key Type** -> `Authentication Key`
    
-   ![alt text](image-5.png)
+   ![alt text](assets/img/image-5.png)
 
 6. **Key:** pega el contenido de `~/.ssh/personal.pub`
 
@@ -312,7 +312,7 @@ Recuerda configurar tus lllaves ssh para trabajar con git y github
 
 8. Por ultimo da click en crear o agregar SSH Key
 
-   ![alt text](image.png)
+   ![alt text](assets/img/image.png)
 
 ---
 
@@ -321,18 +321,18 @@ Recuerda configurar tus lllaves ssh para trabajar con git y github
 1. Ingresa a tu cuenta de Github
 2. En GitHub, ve a **Settings → SSH y GPG keys**.
    
-   ![alt text](image-2.png)
+   ![alt text](assets/img/image-2.png)
 
 3. Da click en `New SSH Key`
 
-   ![alt text](image-1.png)
+   ![alt text](assets/img/image-1.png)
 
 4. Ingresa un tituo o nombre de tu llave SSH    
    - **Title:** `Signer-Personal`
 
 5. **Key Type** -> `Signing Key`
 
-   ![alt text](image-3.png)
+   ![alt text](assets/img/image-3.png)
 
 6. **Key:** pega el contenido de `~/.ssh/personal.pub`
 
@@ -340,7 +340,7 @@ Recuerda configurar tus lllaves ssh para trabajar con git y github
 
 9. Por ultimo da click en crear o agregar SSH Key
 
-   ![alt text](image-4.png)
+   ![alt text](assets/img/image-4.png)
 
 ---
 
