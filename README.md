@@ -39,6 +39,7 @@ bash ./setup_wsl_dev_env.sh
    ```
 3. **Reinicia** el equipo.
 
+> [!NOTE] 
 > 💡 Si ya tenías WSL, basta con verificar la versión y reiniciar.
 
 ---
@@ -63,7 +64,7 @@ bash ./setup_wsl_dev_env.sh
    sudo add-apt-repository ppa:git-core/ppa
    sudo apt update && sudo apt upgrade -y
    ```
-
+> [!TIP]
 > 🔒 _Tip de seguridad:_ Utiliza contraseñas fuertes y, de ser posible, gestiona tu SSH con passphrase.
 
 ---
@@ -264,8 +265,8 @@ Recuerda configurar tus lllaves ssh para trabajar con git y github
    vim ~/.config/git/allowed_signers
    code ~/.config/git/allowed_signers
    ```
-
-   Ahora te recomiendo abrir otra terminal y vas a ver tu llave publica esto es obligatorio:
+   > [!IMPORTANT]
+   > Ahora te recomiendo abrir otra terminal y vas a ver tu llave publica esto es obligatorio:
 
    Copiar y pegar tu llave pública en `allowed_signers`:
     ```bash
@@ -366,7 +367,8 @@ Recuerda configurar tus lllaves ssh para trabajar con git y github
 
 ---
 
-Nota: Es imprescindible completar ambos procesos para añadir tu llave pública en GitHub y así evitar cualquier inconveniente.
+> [!NOTE]
+> Es imprescindible completar ambos procesos para añadir tu llave pública en GitHub y así evitar cualquier inconveniente.
 
 ## Acciones post Instalación:
 
