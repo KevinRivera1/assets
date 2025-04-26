@@ -47,23 +47,31 @@ bash ./setup_wsl_dev_env.sh
 ### 2. Instalar y configurar tu distribución Linux (Ubuntu)
 
 1. Listar distribuciones disponibles:
+
    ```powershell
    wsl --list --online
    ```
+   
 2. Instalar Ubuntu:
+
    ```powershell
    wsl --install -d Ubuntu
    ```
+
 3. Al finalizar, abre **Windows Terminal**, selecciona **Ubuntu** y crea tu **usuario** (username) y **contraseña**.
 4. Actualizar paquetes:
+
    ```bash
    sudo apt update && sudo apt upgrade -y
    ```
+
 5. Agregar repositorio de Git:
+
    ```bash
    sudo add-apt-repository ppa:git-core/ppa
    sudo apt update && sudo apt upgrade -y
    ```
+
 > [!TIP]
 > 🔒 _Tip de seguridad:_ Utiliza contraseñas fuertes y, de ser posible, gestiona tu SSH con passphrase.
 
