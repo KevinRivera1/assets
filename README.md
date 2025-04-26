@@ -265,8 +265,8 @@ Recuerda configurar tus lllaves ssh para trabajar con git y github
    vim ~/.config/git/allowed_signers
    code ~/.config/git/allowed_signers
    ```
-   > [!IMPORTANT]
-   > Ahora te recomiendo abrir otra terminal y vas a ver tu llave publica esto es obligatorio:
+> [!IMPORTANT]
+> Ahora te recomiendo abrir otra terminal y vas a ver tu llave publica esto es obligatorio:
 
    Copiar y pegar tu llave pública en `allowed_signers`:
     ```bash
