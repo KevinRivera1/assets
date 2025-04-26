@@ -23,6 +23,7 @@ Este README te guiará paso a paso para instalar y configurar un entorno de desa
 - [Acciones post Instalación](#acciones-post-instalación)
    * [ Limpiar caché de APT (para distribuciones basadas en Debian/Ubuntu/Wsl)](#1️⃣-limpiar-caché-de-apt-para-distribuciones-basadas-en-debianubuntuwsl)
    * [Limpiar caché de Homebrew (macOS/Ubuntu/Wsl)](#2️⃣-limpiar-caché-de-homebrew-macosubuntuwsl)
+- [Contribuciones](#contribuciones)
 
 ---
 
@@ -454,3 +455,9 @@ brew autoremove     # Elimina dependencias que ya no se usan
 ```
 
 ¡Listo! Con esta guía tienes un entorno completo, personalizable y productivo en Windows con WSL2. ¡A programar! 🎉
+
+---
+
+# Contribuciones
+
+Si deseas contribuir a mejorar esta guía, por favor crea un `fork`  de este repositorio y envía un `Pull Request` con tus cambios. Si encuentras algún error, abre un `issue` para que pueda solucionarlo lo más rápido posible.
