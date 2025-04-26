@@ -200,6 +200,14 @@ Homebrew facilita la instalación de herramientas adicionales.
 
 ---
 
+## 5. Configuración de Starship
+
+¡Personaliza tu prompt de terminal como un profesional! 🎨
+
+1. Configura tu `starship` de forma fácil : Puedes copiar mi configuración personalizada desde el archivo [`starship.toml`](https://github.com/KevinRivera1/assets/blob/main/starship.toml)y adaptarla a tus gustos. Si necesitas ayuda para ajustarla, te recomiendo que consultes la [`Documentación oficial de starship`](https://starship.rs/presets/), que te guiará paso a paso para personalizar tu Prompt de terminal de la mejor manera.
+
+---
+
 ### 🛠️ Solución de problemas
 
 - **Permisos denegados:** añade `sudo` o revisa que tu usuario esté en el grupo `sudo`.
