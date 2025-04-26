@@ -2,6 +2,28 @@
 
 Este README te guiará paso a paso para instalar y configurar un entorno de desarrollo moderno en Windows usando **WSL2**, **Ubuntu**, **Zsh**, **Homebrew**, y herramientas esenciales como Git y SSH.
 
+## Tabla de Contenidos
+
+- [Requisitos Previos](#📋-requisitos-previos)
+- [Instalación Automática](#instalación-recomendada-automáticamente)
+- [Instalación Manual](#instalación-manual)
+   * [Instalar y configurar WSL2](#1️⃣-instalar-y-configurar-wsl2)
+   * [Instalar y configurar tu distribución Linux (Ubuntu)](#2-instalar-y-configurar-tu-distribución-linux-ubuntu)
+   * [Personalizar la Terminal](#3-personalizar-la-terminal)
+      * [Instalar una Nerd Font](#31-instalar-una-nerd-font)
+      * [Zsh + Oh My Zsh](#32-zsh--oh-my-zsh)
+   * [Instalar Homebrew y Utilidades Esenciales](#4-instalar-homebrew-y-utilidades-esenciales)
+   * [Configuración de Starship](#5-configuración-de-starship)
+   * [Solución de problemas](#️🛠️-solución-de-problemas)
+- [Configurar Git y SSH](#5-configurar-git-y-ssh)
+   * [Generar y Añadir Llaves SSH](#51-generar-y-añadir-llaves-ssh)
+   * [Configurar Git Local](#52-configurar-git-local)
+- [Agregar tu llave publica a Github para autenticar el usuario ssh (Authentication Key)](#agregar-tu-llave-publica-a-github-para-autenticar-el-usuario-ssh-authentication-key)
+- [Agregar tu llave publica a Github para firmar commits con ssh (Signing Key)](#agregar-tu-llave-publica-a-github-para-firmar-commits-con-ssh-signing-key)
+- [Acciones post Instalación](#acciones-post-instalación)
+   * [ Limpiar caché de APT (para distribuciones basadas en Debian/Ubuntu/Wsl)](#1️⃣-limpiar-caché-de-apt-para-distribuciones-basadas-en-debianubuntuwsl)
+   * [Limpiar caché de Homebrew (macOS/Ubuntu/Wsl)](#2️⃣-limpiar-caché-de-homebrew-macosubuntuwsl)
+
 ---
 
 ## 📋 Requisitos Previos
