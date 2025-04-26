@@ -152,14 +152,42 @@ Zsh es un shell potente y personalizable; Oh My Zsh facilita su gestión.
 Homebrew facilita la instalación de herramientas adicionales.
 
 1. Instalar Homebrew:
+
    ```bash
    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
    ```
-2. Agregar Homebrew al `PATH` (al final de `~/.zshrc`):
+   - Presiona `ENTER` para continuar la instalación.
+   - El script descargará e instalará Homebrew en tu sistema.
+
+2. Agregar Homebrew al `PATH` de WSL:
+
+> [!NOTE]
+> Presta atención al mensaje que aparece al final de la instalación, específicamente en la sección `-> Next steps:`. Allí encontrarás comandos importantes que deberás ejecutar.
+   
+   - Ejecutar el primer comando
+
+   ![alt text](assets/img/image-7.png)
+
+   - Ahora ejecuta el segundo comando:
+
+   ![alt text](assets/img/image-8.png)
+
+   - Instalar herramientas adicionales
+
    ```bash
-   echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.zshrc
-   source ~/.zshrc
+     sudo apt-get install build-essential
    ```
+
+   -  Agregar Homebrew a `ZSH`
+
+   ```bash
+   # Agregar Homebrew al PATH en ~/.zshrc
+   $ echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.zshrc
+   
+   # Recargar ZSH para aplicar los cambios
+   $ source ~/.zshrc
+   ```
+
 3. Instalar herramientas clave:
    - **Starship** (prompt):
      ```bash
