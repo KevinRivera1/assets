@@ -271,6 +271,28 @@ Homebrew facilita la instalación de herramientas adicionales.
 
 1. Configura tu `starship` de forma fácil : Puedes copiar mi configuración personalizada desde el archivo [`starship.toml`](https://github.com/KevinRivera1/assets/blob/main/starship.toml)y adaptarla a tus gustos. Si necesitas ayuda para ajustarla, te recomiendo que consultes la [`Documentación oficial de starship`](https://starship.rs/presets/), que te guiará paso a paso para personalizar tu Prompt de terminal de la mejor manera.
 
+2. Abre el archivo de configuración `starship.toml`. Si ya tienes este archivo, solo necesitas pegar la configuración copiada dentro de él. El archivo se encuentra en la siguiente ruta:
+
+```bash
+~/.config/starship.toml
+```
+
+> [!NOTE]
+> Si no tienes el archivo `starship.toml` creado, puedes crearlo fácilmente con uno de los siguientes comandos según el editor que prefieras:
+
+```bash
+nano ~/.config/starship.toml
+code ~/.config/starship.toml
+vim ~/.config/starship.toml
+```
+
+3. **Pega la configuración** copiada en el archivo, guarda los cambios y cierra el editor.
+
+4. **Reinicia tu terminal** para aplicar los cambios. Puedes hacer esto simplemente cerrando y abriendo de nuevo la terminal, o ejecutando el siguiente comando:
+
+```bash
+source ~/.zshrc
+```
 ---
 
 ### 🛠️ Solución de problemas
